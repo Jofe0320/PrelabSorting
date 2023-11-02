@@ -47,6 +47,14 @@ public:
         this->pilotName = pilotName;
     }
 
-    Airplane binarySearch(vector<Airplane> airplanes, int givenCapacity);
-    void bubbleSort(vector<Airplane> &airplanes);
+    static Airplane binarySearch(vector<Airplane> airplanes, int givenCapacity);
+     void bubbleSort(vector<Airplane> &airplanes);
+
+     void showAirplane(){
+        cout << "Name: " << this->model << endl;
+        cout << "Capaciy: " << this-> capacity << endl;
+        cout << "Pilot Name: " << this->pilotName << endl;
+        cout << "Velocity " << this->velocity << endl << endl;
+         
+    }
 };
