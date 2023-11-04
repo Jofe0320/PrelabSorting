@@ -24,6 +24,23 @@ Airplane Airplane::binarySearch(vector<Airplane> airplanes, int givenCapacity){
 }
 
 
+vector<int> Airplane::searchMatrix(vector< vector<Airplane> > airplaneMatrix, string pilotName){
+        // you cannot assume that it's a square matrix
+
+        for(int row = 0; row < airplaneMatrix.size(); row++)
+        {
+            for(int col = 0; col < airplaneMatrix[row].size(); col++){
+                Airplane currentAirplane = airplaneMatrix[row][col];
+                if(pilotName == currentAirplane.getPilotName()){
+                    return vector<int>{row, col};
+                }
+            }
+        }
+
+        return vector<int>{-1, -1};
+    
+}
+
 int main(){
 
     Airplane a1 = Airplane(140, 200, "Airbus A380", "Nikola Jokic" );
@@ -34,6 +51,9 @@ int main(){
     Airplane a6 = Airplane(190, 240, "Airbus A319", "Devin Booker");
     Airplane a7 = Airplane(200, 300, "Embraer 190", "Kevin Durant");
     Airplane a8 = Airplane(210, 400, "Boeing 707", "LeBron James");
+    Airplane a9 = Airplane(220, 450, "Random Plane Name", "Tyrese Haliburton");
+    Airplane a10 = Airplane(230, 500, "Douglas DC-3", "Robert Oppenheimer");
+    
     
     vector<Airplane> test1 = {a1, a2, a3, a4, a5, a6, a7, a8};
     vector<Airplane> test2 = {a4, a5};

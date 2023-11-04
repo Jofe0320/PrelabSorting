@@ -47,6 +47,7 @@ public:
         this->pilotName = pilotName;
     }
 
+    static vector<int> searchMatrix(vector< vector<Airplane> > airplaneMatrix,  string pilotName);
     static Airplane binarySearch(vector<Airplane> airplanes, int givenCapacity);
      void bubbleSort(vector<Airplane> &airplanes);
 
