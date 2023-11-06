@@ -115,4 +115,34 @@ int main()
    Airplane::binarySearch(empty, 900).showAirplane();   // Anthony Edwards
    Airplane::binarySearch(test1, 800).showAirplane(); // Anthony Edwards
    Airplane::binarySearch(test1, 210).showAirplane(); // LeBron James
+
+    test1 = {a8, a5, a4, a2, a6, a3, a7, a1};
+    test2 = {a5, a4};
+    empty = {};
+
+    cout << "Before Sorting: " << endl;
+    for (Airplane& plane : test1) {
+        plane.showAirplane();
+    }
+
+    Airplane::insertionSort(test1);
+
+    cout << "\nAfter Sorting: " << endl;
+    for (Airplane& plane : test1) {
+        plane.showAirplane();
+    }
+
+    cout << "Before Sorting: " << endl;
+    for (Airplane& plane : test2) {
+        plane.showAirplane();
+    }
+
+    Airplane::insertionSort(test2);
+
+    cout << "\nAfter Sorting: " << endl;
+    for (Airplane& plane : test2) {
+        plane.showAirplane();
+    }
+
+    return 0;
 }
