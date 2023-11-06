@@ -49,7 +49,7 @@ public:
 
     static vector<int> searchMatrix(vector< vector<Airplane> > airplaneMatrix,  string pilotName);
     static Airplane binarySearch(vector<Airplane> airplanes, int givenCapacity);
-     void bubbleSort(vector<Airplane> &airplanes);
+    static void insertionSort(vector<Airplane> &airplanes);
 
      void showAirplane(){
         cout << "Name: " << this->model << endl;
