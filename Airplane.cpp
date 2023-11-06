@@ -55,6 +55,8 @@ void Airplane::insertionSort(vector<Airplane> &airplanes){
     }
 }
 
+
+
 int main(){
 
     Airplane a1 = Airplane(140, 200, "Airbus A380", "Nikola Jokic" );
