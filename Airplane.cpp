@@ -41,6 +41,20 @@ vector<int> Airplane::searchMatrix(vector< vector<Airplane> > airplaneMatrix, st
     
 }
 
+void Airplane::insertionSort(vector<Airplane> &airplanes){
+    for (int i = 1; i < airplanes.size(); ++i) {
+        Airplane temp = airplanes[i];
+        int j = i - 1;
+
+        while (j >= 0 && airplanes[j].getCapacity() > temp.getCapacity()) {
+            airplanes[j + 1] = airplanes[j];
+            j = j - 1;
+        }
+
+        airplanes[j + 1] = temp;
+    }
+}
+
 int main(){
 
     Airplane a1 = Airplane(140, 200, "Airbus A380", "Nikola Jokic" );
@@ -58,11 +72,42 @@ int main(){
     vector<Airplane> test1 = {a1, a2, a3, a4, a5, a6, a7, a8};
     vector<Airplane> test2 = {a4, a5};
     vector<Airplane> empty = {};
-   Airplane::binarySearch(test1, 140).showAirplane(); // Nikola Jokic
-   Airplane::binarySearch(test2, 180).showAirplane(); // Jamal Murray
+    Airplane::binarySearch(test1, 140).showAirplane(); // Nikola Jokic
+    Airplane::binarySearch(test2, 180).showAirplane(); // Jamal Murray
     Airplane::binarySearch(test1, 150).showAirplane();  // Jimmy Butler
     Airplane::binarySearch(test1, 200).showAirplane();  // Kevin Durant
-   Airplane::binarySearch(empty, 900).showAirplane();   // Anthony Edwards
-   Airplane::binarySearch(test1, 800).showAirplane(); // Anthony Edwards
-   Airplane::binarySearch(test1, 210).showAirplane(); // LeBron James
+    Airplane::binarySearch(empty, 900).showAirplane();   // Anthony Edwards
+    Airplane::binarySearch(test1, 800).showAirplane(); // Anthony Edwards
+    Airplane::binarySearch(test1, 210).showAirplane(); // LeBron James
+
+    test1 = {a8, a5, a4, a2, a6, a3, a7, a1};
+    test2 = {a5, a4};
+    empty = {};
+
+    cout << "Before Sorting: " << endl;
+    for (Airplane& plane : test1) {
+        plane.showAirplane();
+    }
+
+    Airplane::insertionSort(test1);
+
+    cout << "\nAfter Sorting: " << endl;
+    for (Airplane& plane : test1) {
+        plane.showAirplane();
+    }
+
+    cout << "Before Sorting: " << endl;
+    for (Airplane& plane : test2) {
+        plane.showAirplane();
+    }
+
+    Airplane::insertionSort(test2);
+
+    cout << "\nAfter Sorting: " << endl;
+    for (Airplane& plane : test2) {
+        plane.showAirplane();
+    }
+
+    return 0;
 }
+
